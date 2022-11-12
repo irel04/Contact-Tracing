@@ -24,7 +24,13 @@ def creating_database(x, y, z, a):
     
     contacts[x] = y, z, a
 
+
 # Display the Menu (add item, search, exit)
+print("\n\n" + " " * 2  + "<" * 19 + " MENU " + ">" * 19)
+print("\n[a] Add a contact", end="        ")
+print("[b] Search an existing contact")
+print("[c] Exit program")
+
 # Prompt the user about the options
 # Option 1 (add user information such as full name, contacts, address, etc.)
 # Option 2 (search user user based on address, full name, or previous record)
