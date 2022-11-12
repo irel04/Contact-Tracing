@@ -3,30 +3,15 @@ print(f"{'|'}{' ': >20}{'Programmed by Irel Kian C. Bacolod'}{' ': >19}{'|'}")
 print(f"{'=' * 75}")
 
 # Create an empty dictionary
-slot_dict = {
-    "name": {
-        "number": "info",
-        "address": "info",
-        "condition": "info",
-        "contact-with-covid-19?": "info"}
-}
-
 contacts ={
 
 }
 
 def creating_database(x, y, z, a, b):
-    
-    slot_dict["name"]["number"] = y
-    slot_dict["name"]["address"] = z
-    slot_dict["name"]["condition"] = a
-    slot_dict["name"]["contact-width-covid-19?"] = b
-    slot_dict["name"] = x
-
     contacts[x] = {
         "number": y,
         "address": z,
-        "condition": a,
+        "cough/cold/fever?": a,
         "contact-with-covid-19?": b}
 
 
@@ -50,6 +35,12 @@ if option.lower() == "a":
     creating_database(name, number, address, condition, in_contact)
     print(contacts)
 
-# Option 2 (search user user based on address, full name, or previous record)
+# Option 2 (search user record)
+if option.lower() == "b":
+    search = input("\nEnter name you wanted to search: ")
+    if search in contacts:
+        print(contacts[search])
+
 # Option 3 (Ask the user if want to exit)
+
 # Create a Loop 
