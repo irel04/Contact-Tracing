@@ -67,9 +67,19 @@ while True:
                 print("contact-with-covid-19:", contacts[search]["contact-with-covid-19?"])
 
 
-    # Option 3 (Ask the user if want to exit)
+    # Option 3 (View all contacts)
     elif option.lower() == "c":
-        retry = input("Do you want to continue?(y/n) ")
+        print()
+        print("List of names in the contacts")
+        print("\nBased on the database, {} persons are listed below:".format(str(len(contacts))))
+        for i in contacts:
+            print(i)
+
+
+
+    # Option 4 (Ask the user if want to exit)
+    elif option.lower() == "d":
+        retry = input("\nDo you want to continue?(y/n) ")
         if retry.lower() == "y":
             continue
         elif retry.lower() == "n":
