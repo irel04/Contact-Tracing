@@ -8,7 +8,7 @@ slot_dict = {
         "number": "info",
         "address": "info",
         "condition": "info",
-        "contact-with-covid-19?": "info"},
+        "contact-with-covid-19?": "info"}
 }
 
 contacts ={
@@ -16,14 +16,18 @@ contacts ={
 }
 
 def creating_database(x, y, z, a, b):
-    slot_dict["name"]=x
-    for i in x:
-        x["number"] = y
-        x["address"] = z
-        x["condition"] = a
-        x["contact-width-covid-19?"] = b
     
-    contacts[x] = y, z, a
+    slot_dict["name"]["number"] = y
+    slot_dict["name"]["address"] = z
+    slot_dict["name"]["condition"] = a
+    slot_dict["name"]["contact-width-covid-19?"] = b
+    slot_dict["name"] = x
+
+    contacts[x] = {
+        "number": y,
+        "address": z,
+        "condition": a,
+        "contact-with-covid-19?": b}
 
 
 # Display the Menu (add item, search, exit)
@@ -44,6 +48,7 @@ if option.lower() == "a":
     condition =input("Are you experiencing cough, cold, or fever? (yes/no): ")
     in_contact = input("Do you had contact with a person with Covid? (yes/no): ")
     creating_database(name, number, address, condition, in_contact)
+    print(contacts)
 
 # Option 2 (search user user based on address, full name, or previous record)
 # Option 3 (Ask the user if want to exit)
