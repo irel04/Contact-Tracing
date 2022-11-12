@@ -32,6 +32,8 @@ print("[b] Search an existing contact")
 print("[c] Exit program")
 
 # Prompt the user about the options
+option = input("\nChoose an option from (a-c): ")
+
 # Option 1 (add user information such as full name, contacts, address, etc.)
 # Option 2 (search user user based on address, full name, or previous record)
 # Option 3 (Ask the user if want to exit)
