@@ -4,6 +4,26 @@ print(f"{'=' * 75}")
 
 # Create an empty dictionary
 contacts ={
+    "lite":{
+        "number": "luh",
+        "address": "luh",
+        "cough/cold/fever?": "luh",
+        "contact-with-covid-19?": "yes"},
+    "Mary":{
+            "number": "09327893355",
+            "address": "luh",
+            "cough/cold/fever?": "luh",
+            "contact-with-covid-19?": "no"},
+  "FB":{
+        "number": "luh",
+        "address": "luh",
+        "cough/cold/fever?": "luh",
+        "contact-with-covid-19?": "yes"},
+   "good":{
+        "number": "luh",
+        "address": "luh",
+        "cough/cold/fever?": "luh",
+        "contact-with-covid-19?": "no"}      
 
 }
 
@@ -19,28 +39,39 @@ def creating_database(x, y, z, a, b):
 print("\n\n" + " " * 2  + "<" * 19 + " MENU " + ">" * 19)
 print("\n[a] Add a contact", end="        ")
 print("[b] Search an existing contact")
-print("[c] Exit program")
+print("[c] View Directory", end="       ")
+print("[d] Exit")
 
-# Prompt the user about the options
-option = input("\nChoose an option from (a-c): ")
+while True:
+    # Prompt the user about the options
+    option = input("\nChoose an option from (a-c): ")
 
-# Option 1 (add user information such as full name, contacts, address, etc.)
-if option.lower() == "a":
-    print("\nPlease fill up the necessary information for contact tracing.")
-    name = input("Enter your full name: ")
-    number = input("Enter your number: ")
-    address = input("Enter your address: ")
-    condition =input("Are you experiencing cough, cold, or fever? (yes/no): ")
-    in_contact = input("Do you had contact with a person with Covid? (yes/no): ")
-    creating_database(name, number, address, condition, in_contact)
-    print(contacts)
+    # Option 1 (add user information such as full name, contacts, address, etc.)
+    if option.lower() == "a":
+        print("\nPlease fill up the necessary information for contact tracing.")
+        name = input("Enter your full name: ")
+        number = input("Enter your number: ")
+        address = input("Enter your address: ")
+        condition =input("Are you experiencing cough, cold, or fever? (yes/no): ")
+        in_contact = input("Do you had contact with a person with Covid? (yes/no): ")
+        creating_database(name, number, address, condition, in_contact)
 
-# Option 2 (search user record)
-if option.lower() == "b":
-    search = input("\nEnter name you wanted to search: ")
-    if search in contacts:
-        print(contacts[search])
+    # Option 2 (search user record)
+    elif option.lower() == "b":
+        search = input("\nEnter name you wanted to search: ")
+        for list in contacts:
+            if list == search:
+                print("number:", contacts[search]["number"])
+                print("address:", contacts[search]["address"])
+                print("cough/cold/fever:", contacts[search]["cough/cold/fever?"])
+                print("contact-with-covid-19:", contacts[search]["contact-with-covid-19?"])
 
-# Option 3 (Ask the user if want to exit)
 
-# Create a Loop 
+    # Option 3 (Ask the user if want to exit)
+    elif option.lower() == "c":
+        retry = input("Do you want to continue?(y/n) ")
+        if retry.lower() == "y":
+            continue
+        elif retry.lower() == "n":
+            break
+    # Create a Loop 
