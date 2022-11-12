@@ -15,12 +15,13 @@ contacts ={
 
 }
 
-def creating_database(x, y, z, a):
+def creating_database(x, y, z, a, b):
     slot_dict["name"]=x
     for i in x:
         x["number"] = y
-        x["number"] = z
-        x["number"] = a
+        x["address"] = z
+        x["condition"] = a
+        x["contact-width-covid-19?"] = b
     
     contacts[x] = y, z, a
 
@@ -35,6 +36,15 @@ print("[c] Exit program")
 option = input("\nChoose an option from (a-c): ")
 
 # Option 1 (add user information such as full name, contacts, address, etc.)
+if option.lower() == "a":
+    print("\nPlease fill up the necessary information for contact tracing.")
+    name = input("Enter your full name: ")
+    number = input("Enter your number: ")
+    address = input("Enter your address: ")
+    condition =input("Are you experiencing cough, cold, or fever? (yes/no): ")
+    in_contact = input("Do you had contact with a person with Covid? (yes/no): ")
+    creating_database(name, number, address, condition, in_contact)
+
 # Option 2 (search user user based on address, full name, or previous record)
 # Option 3 (Ask the user if want to exit)
 # Create a Loop 
